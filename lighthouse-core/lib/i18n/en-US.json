@@ -761,7 +761,7 @@
   },
   "lighthouse-core/audits/seo/canonical.js | failureTitle": {
     "message": "Document does not have a valid `rel=canonical`",
-    "description": "Title of a Lighthouse audit that provides detail on a page's rel=canonical link. This imperative title is shown to users when the rel=canonical link is invalid and should be fixed."
+    "description": "Descriptive title of a Lighthouse audit that provides detail on a page's rel=canonical link. This imperative title is shown to users when the rel=canonical link is invalid and should be fixed."
   },
   "lighthouse-core/audits/seo/canonical.js | title": {
     "message": "Document has a valid `rel=canonical`",
@@ -789,7 +789,7 @@
   },
   "lighthouse-core/audits/seo/font-size.js | failureTitle": {
     "message": "Document doesn't use legible font sizes",
-    "description": "Title of a Lighthouse audit that provides detail on the font sizes used on the page. This imperative title is shown to users when there is a font that is too small to be read by the user."
+    "description": "Descriptive title of a Lighthouse audit that provides detail on the font sizes used on the page. This imperative title is shown to users when there is a font that is too small to be read by the user."
   },
   "lighthouse-core/audits/seo/font-size.js | title": {
     "message": "Document uses legible font sizes",
@@ -801,7 +801,7 @@
   },
   "lighthouse-core/audits/seo/hreflang.js | failureTitle": {
     "message": "Document doesn't have a valid `hreflang`",
-    "description": "Title of a Lighthouse audit that provides detail on the `hreflang` element on a page. This imperative title is shown when the `hreflang` element is not valid and needs to be fixed."
+    "description": "Descriptive title of a Lighthouse audit that provides detail on the `hreflang` element on a page. This imperative title is shown when the `hreflang` element is not valid and needs to be fixed."
   },
   "lighthouse-core/audits/seo/hreflang.js | title": {
     "message": "Document has a valid `hreflang`",
@@ -813,7 +813,7 @@
   },
   "lighthouse-core/audits/seo/http-status-code.js | failureTitle": {
     "message": "Page has unsuccessful HTTP status code",
-    "description": "Title of a Lighthouse audit that provides detail on the HTTP status code a page responds with. This imperative title is shown when the page responds to requests with an HTTP status code that indicates the request was unsuccessful."
+    "description": "Descriptive title of a Lighthouse audit that provides detail on the HTTP status code a page responds with. This imperative title is shown when the page responds to requests with an HTTP status code that indicates the request was unsuccessful."
   },
   "lighthouse-core/audits/seo/http-status-code.js | title": {
     "message": "Page has successful HTTP status code",
@@ -825,7 +825,7 @@
   },
   "lighthouse-core/audits/seo/is-crawlable.js | failureTitle": {
     "message": "Page is blocked from indexing",
-    "description": "Title of a Lighthouse audit that provides detail on the blocking status of their page in regards to search-engine index crawling. This imperative title is shown when the page has been configured to block indexing and therefore cannot be indexed by search engines."
+    "description": "Descriptive title of a Lighthouse audit that provides detail on the blocking status of their page in regards to search-engine index crawling. This imperative title is shown when the page has been configured to block indexing and therefore cannot be indexed by search engines."
   },
   "lighthouse-core/audits/seo/is-crawlable.js | title": {
     "message": "Page isn’t blocked from indexing",
@@ -841,7 +841,7 @@
   },
   "lighthouse-core/audits/seo/link-text.js | failureTitle": {
     "message": "Links do not have descriptive text",
-    "description": "Title of a Lighthouse audit that provides detail on the text descriptions used for links on the page. This imperative title is shown when one or more links on the page do not have enough text describing them to be considered valid when being crawled by a search engine."
+    "description": "Descriptive title of a Lighthouse audit that provides detail on the text descriptions used for links on the page, this is shown when links contain generic non-descriptive text like \"click here\". This imperative title is shown when one or more links on the page do not have enough text describing them to be considered valid when being crawled by a search engine."
   },
   "lighthouse-core/audits/seo/link-text.js | title": {
     "message": "Links have descriptive text",
@@ -853,7 +853,7 @@
   },
   "lighthouse-core/audits/seo/manual/mobile-friendly.js | title": {
     "message": "Page is mobile friendly",
-    "description": "Title of a Lighthouse audit that provides detail on how well the page is setup to be compatible with mobile devices such as cellphones. This is displayed in a list of audit titles that Lighthouse generates."
+    "description": "Title of a Lighthouse audit that prompts users to manually check their page for compatibility with mobile devices such as cellphones. This is displayed in a list of audit titles that Lighthouse generates."
   },
   "lighthouse-core/audits/seo/manual/structured-data.js | description": {
     "message": "Run the [Structured Data Testing Tool](https://search.google.com/structured-data/testing-tool/) and the [Structured Data Linter](http://linter.structured-data.org/) to validate structured data. [Learn more](https://developers.google.com/search/docs/guides/mark-up-content).",
@@ -861,7 +861,7 @@
   },
   "lighthouse-core/audits/seo/manual/structured-data.js | title": {
     "message": "Structured data is valid",
-    "description": "Title of a Lighthouse audit that provides detail on the structured data in a page. This is displayed in a list of audit titles that Lighthouse generates."
+    "description": "Title of a Lighthouse audit that prompts users to manually check their page for valid structured data. This is displayed in a list of audit titles that Lighthouse generates."
   },
   "lighthouse-core/audits/seo/meta-description.js | description": {
     "message": "Meta descriptions may be included in search results to concisely summarize page content. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/description).",
@@ -873,7 +873,7 @@
   },
   "lighthouse-core/audits/seo/meta-description.js | failureTitle": {
     "message": "Document does not have a meta description",
-    "description": "Title of a Lighthouse audit that provides detail on the web page's document meta description. This imperative title is shown when the document does not have a meta description."
+    "description": "Descriptive title of a Lighthouse audit that provides detail on the web page's document meta description. This imperative title is shown when the document does not have a meta description."
   },
   "lighthouse-core/audits/seo/meta-description.js | title": {
     "message": "Document has a meta description",
@@ -885,7 +885,7 @@
   },
   "lighthouse-core/audits/seo/plugins.js | failureTitle": {
     "message": "Document uses plugins",
-    "description": "Title of a Lighthouse audit that provides detail on the plugin content found in the page. This imperative title is shown when there is plugin content on the page which cannot be indexed by search engine crawlers."
+    "description": "Descriptive title of a Lighthouse audit that provides detail on the plugin content found in the page. This imperative title is shown when there is plugin content on the page which cannot be indexed by search engine crawlers."
   },
   "lighthouse-core/audits/seo/plugins.js | title": {
     "message": "Document avoids plugins",
@@ -904,12 +904,12 @@
     "description": "[ICU Syntax] Label for the audit identifying the number of errors that occured while validating the robots.txt file."
   },
   "lighthouse-core/audits/seo/robots-txt.js | explanation": {
-    "message": "Lighthouse was unable to download your robots.txt file",
+    "message": "Lighthouse was unable to download a robots.txt file",
     "description": "Explanatory message stating that there was a failure in an audit caused by Lighthouse not being able to download the robots.txt file for the page."
   },
   "lighthouse-core/audits/seo/robots-txt.js | failureTitle": {
     "message": "robots.txt is not valid",
-    "description": "Title of a Lighthouse audit that provides detail on the robots.txt file on the page. This imperative title is shown when the robots.txt file is misconfigured, which makes the page hard or impossible to scan via web crawler."
+    "description": "Descriptive title of a Lighthouse audit that provides detail on the robots.txt file on the page. This imperative title is shown when the robots.txt file is misconfigured, which makes the page hard or impossible to scan via web crawler."
   },
   "lighthouse-core/audits/seo/robots-txt.js | title": {
     "message": "robots.txt is valid",
