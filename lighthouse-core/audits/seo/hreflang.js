@@ -16,7 +16,7 @@ const i18n = require('../../lib/i18n/i18n.js');
 const UIStrings = {
   /** Title of a Lighthouse audit that provides detail on the `hreflang` element on a page. This descriptive title is shown when the `hreflang` element is configured correctly. */
   title: 'Document has a valid `hreflang`',
-  /** Title of a Lighthouse audit that provides detail on the `hreflang` element on a page. This imperative title is shown when the `hreflang` element is not valid and needs to be fixed. */
+  /** Descriptive title of a Lighthouse audit that provides detail on the `hreflang` element on a page. This imperative title is shown when the `hreflang` element is not valid and needs to be fixed. */
   failureTitle: 'Document doesn\'t have a valid `hreflang`',
   /** Description of a Lighthouse audit that tells the user *why* they need to have an hreflang link on their page. This is displayed after a user expands the section to see more. No character length limits. 'Learn More' becomes link text to additional documentation. */
   description: 'hreflang links tell search engines what version of a page they should ' +

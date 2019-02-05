@@ -16,7 +16,7 @@ const MINIMAL_PERCENTAGE_OF_LEGIBLE_TEXT = 60;
 const UIStrings = {
   /** Title of a Lighthouse audit that provides detail on the font sizes used on the page. This descriptive title is shown to users when the fonts used on the page are large enough to be considered legible. */
   title: 'Document uses legible font sizes',
-  /** Title of a Lighthouse audit that provides detail on the font sizes used on the page. This imperative title is shown to users when there is a font that is too small to be read by the user. */
+  /** Descriptive title of a Lighthouse audit that provides detail on the font sizes used on the page. This imperative title is shown to users when there is a font that is too small to be read by the user. */
   failureTitle: 'Document doesn\'t use legible font sizes',
   /** Description of a Lighthouse audit that tells the user *why* they need to use a larger font size. This is displayed after a user expands the section to see more. No character length limits. 'Learn More' becomes link text to additional documentation. */
   description: 'Font sizes less than 12px are too small to be legible and require mobile visitors to “pinch to zoom” in order to read. Strive to have >60% of page text ≥12px. [Learn more](https://developers.google.com/web/tools/lighthouse/audits/font-sizes).',

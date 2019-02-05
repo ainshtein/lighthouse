@@ -23,7 +23,7 @@ const i18n = require('../../lib/i18n/i18n.js');
 const UIStrings = {
   /** Title of a Lighthouse audit that provides detail on the text descriptions used for links on the page. This descriptive title is shown when all links on the page have sufficient textual descriptions. */
   title: 'Links have descriptive text',
-  /** Title of a Lighthouse audit that provides detail on the text descriptions used for links on the page. This imperative title is shown when one or more links on the page do not have enough text describing them to be considered valid when being crawled by a search engine. */
+  /** Descriptive title of a Lighthouse audit that provides detail on the text descriptions used for links on the page, this is shown when links contain generic non-descriptive text like "click here". This imperative title is shown when one or more links on the page do not have enough text describing them to be considered valid when being crawled by a search engine. */
   failureTitle: 'Links do not have descriptive text',
   /** Description of a Lighthouse audit that tells the user *why* they need to have descriptive text on the links in their page. This is displayed after a user expands the section to see more. No character length limits. 'Learn More' becomes link text to additional documentation. */
   description: 'Descriptive link text helps search engines understand your content. ' +

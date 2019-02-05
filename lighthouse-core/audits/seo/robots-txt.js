@@ -36,7 +36,7 @@ const i18n = require('../../lib/i18n/i18n.js');
 const UIStrings = {
   /** Title of a Lighthouse audit that provides detail on the robots.txt file on the page. This descriptive title is shown when the robots.txt file is present and configured correctly. */
   title: 'robots.txt is valid',
-  /** Title of a Lighthouse audit that provides detail on the robots.txt file on the page. This imperative title is shown when the robots.txt file is misconfigured, which makes the page hard or impossible to scan via web crawler. */
+  /** Descriptive title of a Lighthouse audit that provides detail on the robots.txt file on the page. This imperative title is shown when the robots.txt file is misconfigured, which makes the page hard or impossible to scan via web crawler. */
   failureTitle: 'robots.txt is not valid',
   /** Description of a Lighthouse audit that tells the user *why* they need to have a valid robots.txt file. This is displayed after a user expands the section to see more. No character length limits. 'Learn More' becomes link text to additional documentation. */
   description: 'If your robots.txt file is malformed, crawlers may not be able to understand ' +
@@ -49,7 +49,7 @@ const UIStrings = {
     other {# errors found}
     }`,
   /** Explanatory message stating that there was a failure in an audit caused by Lighthouse not being able to download the robots.txt file for the page.*/
-  explanation: 'Lighthouse was unable to download your robots.txt file',
+  explanation: 'Lighthouse was unable to download a robots.txt file',
 };
 
 const str_ = i18n.createMessageInstanceIdFn(__filename, UIStrings);
