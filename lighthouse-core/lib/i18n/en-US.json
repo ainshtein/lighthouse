@@ -945,7 +945,7 @@
   },
   "lighthouse-core/audits/seo/tap-targets.js | failureTitle": {
     "message": "Tap targets are not sized appropriately",
-    "description": "Title of a Lighthouse audit that provides detail on whether tap targets (like buttons and links) on a page are big enough so they can easily be tapped on a mobile device. This descriptive title is shown when tap targets are not easy to tap on."
+    "description": "Descriptive title of a Lighthouse audit that provides detail on whether tap targets (like buttons and links) on a page are big enough so they can easily be tapped on a mobile device. This descriptive title is shown when tap targets are not easy to tap on."
   },
   "lighthouse-core/audits/seo/tap-targets.js | overlappingTargetHeader": {
     "message": "Overlapping Target",
