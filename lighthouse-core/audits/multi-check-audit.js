@@ -11,6 +11,15 @@
 
 const Audit = require('./audit');
 
+/** @typedef {
+  Partial<Record<LH.Artifacts.ManifestValueCheckID, boolean>> &
+  Partial<LH.Artifacts.ManifestValues> & {
+    failures: Array<string>;
+    manifestValues?: undefined;
+    allChecks?: undefined;
+  }} MultiCheckDiagnosticDetails
+ */
+
 class MultiCheckAudit extends Audit {
   /**
    * @param {LH.Artifacts} artifacts
@@ -27,7 +36,7 @@ class MultiCheckAudit extends Audit {
    * @return {LH.Audit.Product}
    */
   static createAuditProduct(result) {
-    /** @type {LH.Audit.MultiCheckAuditDetails} */
+    /** @type {MultiCheckDiagnosticDetails} */
     const detailsItem = {
       ...result,
       ...result.manifestValues,
@@ -41,7 +50,13 @@ class MultiCheckAudit extends Audit {
       });
     }
 
-    const details = {items: [detailsItem]};
+    // Include the detailed pass/fail checklist as a diagnostic.
+    /** @type {LH.Audit.Details.Diagnostic} */
+    const details = {
+      type: 'diagnostic',
+      // TODO: Consider not nesting detailsItem under `items`.
+      items: [detailsItem],
+    };
 
     // If we fail, share the failures
     if (result.failures.length > 0) {
