@@ -8,6 +8,8 @@
 const Gatherer = require('./gatherer.js');
 const pageFunctions = require('../../lib/page-functions.js');
 
+/* eslint-env browser, node */
+
 /**
  * Function that is stringified and run in the page to collect anchor elements.
  * Additional complexity is introduced because anchors can be HTML or SVG elements.
@@ -21,13 +23,16 @@ const pageFunctions = require('../../lib/page-functions.js');
 function collectAnchorElements() {
   /** @param {string} url */
   const resolveURLOrEmpty = url => {
-    try { return new URL(url, window.location.href).href; }
-    catch (_) { return ''; }
+    try {
+      return new URL(url, window.location.href).href;
+    } catch (_) {
+      return '';
+    }
   };
 
   /** @type {Array<HTMLAnchorElement|SVGAElement>} */
   // @ts-ignore - put into scope via stringification
-  const anchorElements = getElementsInDocument('a');
+  const anchorElements = getElementsInDocument('a'); // eslint-disable-line no-undef
 
   return anchorElements.map(node => {
     const anchorNode = /** @type {HTMLAnchorElement} */ (node);
@@ -38,8 +43,8 @@ function collectAnchorElements() {
       rel: anchorNode.rel,
       target: anchorNode.target,
       // @ts-ignore - put into scope via stringification
-      outerHTML: getOuterHTMLSnippet(node),
-    }
+      outerHTML: getOuterHTMLSnippet(node), // eslint-disable-line no-undef
+    };
 
     const href = /** @type {string|SVGAnimatedString} */ (anchorNode.href);
     const svgNode = /** @type {SVGAElement} */ (node);
@@ -66,7 +71,7 @@ class AnchorElements extends Gatherer {
       ${pageFunctions.getElementsInDocumentString};
 
       return (${collectAnchorElements})();
-    })()`
+    })()`;
 
     /** @type {Array<LH.Artifacts.AnchorElement>} */
     return driver.evaluateAsync(expression, {useIsolation: true});
