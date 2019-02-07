@@ -69,7 +69,7 @@ class ImageAspectRatio extends Audit {
 
     /** @type {string[]} */
     const warnings = [];
-    /** @type {Array<{url: string, displayedAspectRatio: string, actualAspectRatio: string}>} */
+    /** @type {Array<{url: string, displayedAspectRatio: string, actualAspectRatio: string, doRatiosMatch: boolean}>} */
     const results = [];
     images.filter(image => {
       // - filter out images that don't have following properties:
