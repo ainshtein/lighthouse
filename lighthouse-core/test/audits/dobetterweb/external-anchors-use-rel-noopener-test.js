@@ -32,6 +32,7 @@ describe('External anchors use rel="noopener"', () => {
       AnchorElements: [
         {href: 'https://other.com/test', target: '_blank', rel: 'nofollow noopener'},
         {href: 'https://other.com/test1', target: '_blank', rel: 'noreferrer'},
+        {href: 'https://other.com/test2', target: '_blank', rel: 'noopener'},
       ],
       URL: {finalUrl: URL},
     });
@@ -80,7 +81,7 @@ describe('External anchors use rel="noopener"', () => {
   it('fails when links are from different hosts than the page host', () => {
     const auditResult = ExternalAnchorsAudit.audit({
       AnchorElements: [
-        {href: 'https://example.com/test', target: '_blank', rel: ''},
+        {href: 'https://example.com/test', target: '_blank', rel: 'nofollow'},
         {href: 'https://example.com/test1', target: '_blank', rel: ''},
       ],
       URL: {finalUrl: URL},

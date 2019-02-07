@@ -11,6 +11,10 @@ const pageFunctions = require('../../lib/page-functions.js');
 /**
  * Function that is stringified and run in the page to collect anchor elements.
  * Additional complexity is introduced because anchors can be HTML or SVG elements.
+ *
+ * We use this evaluateAsync method because the `node.getAttribute` method doesn't actually normalize
+ * the values like access from JavaScript in-page does.
+ *
  * @return {LH.Artifacts['AnchorElements']}
  */
 /* istanbul ignore next */
@@ -26,8 +30,7 @@ function collectAnchorElements() {
   const anchorElements = getElementsInDocument('a');
 
   return anchorElements.map(node => {
-    /** @type {HTMLAnchorElement} */
-    const anchorNode = (node);
+    const anchorNode = /** @type {HTMLAnchorElement} */ (node);
     /** @type {LH.Artifacts.AnchorElement} */
     const anchorElementInfo = {
       href: anchorNode.href,
@@ -38,10 +41,8 @@ function collectAnchorElements() {
       outerHTML: getOuterHTMLSnippet(node),
     }
 
-    /** @type {string|SVGAnimatedString} */
-    const href = (anchorNode.href);
-    /** @type {SVGAElement} */
-    const svgNode = (node);
+    const href = /** @type {string|SVGAnimatedString} */ (anchorNode.href);
+    const svgNode = /** @type {SVGAElement} */ (node);
     if (href instanceof SVGAnimatedString) {
       anchorElementInfo.href = resolveURLOrEmpty(href.baseVal);
       anchorElementInfo.text = svgNode.textContent || '';
@@ -67,8 +68,6 @@ class AnchorElements extends Gatherer {
       return (${collectAnchorElements})();
     })()`
 
-    // We'll use evaluateAsync because the `node.getAttribute` method doesn't actually normalize
-    // the values like access from JavaScript does.
     /** @type {Array<LH.Artifacts.AnchorElement>} */
     return driver.evaluateAsync(expression, {useIsolation: true});
   }
