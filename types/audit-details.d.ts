@@ -45,6 +45,7 @@ declare global {
         overallSavingsBytes?: number;
         headings: OpportunityColumnHeading[];
         items: OpportunityItem[];
+        diagnostic?: Diagnostic;
       }
 
       export interface Screenshot {
@@ -53,7 +54,6 @@ declare global {
         data: string;
       }
 
-      // TODO(bckenny): unify Table/Opportunity headings and items on next breaking change.
       export interface Table {
         type: 'table';
         headings: TableColumnHeading[];
@@ -74,18 +74,30 @@ declare global {
         [p: string]: any;
       }
 
-      // Contents of details below here
+      /** Possible types of values found within table items. */
+      type ItemValueTypes = 'bytes' | 'code' | 'link' | 'ms' | 'node' | 'numeric' | 'text' | 'thumbnail' | 'timespanMs' | 'url';
+
+      // TODO(bckenny): unify Table/Opportunity headings and items on next breaking change.
 
       export interface TableColumnHeading {
         /** The name of the property within items being described. */
         key: string;
         /** Readable text label of the field. */
         text: string;
-        /** The data format of the column of values being described. */
+        /**
+         * The data format of the column of values being described. Usually
+         * those values will be primitives rendered as this type, but the values
+         * could also be objects with their own type to override this field.
+         */
         itemType: ItemValueTypes;
 
         displayUnit?: string;
         granularity?: number;
+      }
+
+      export type TableItem = {
+        diagnostic?: Diagnostic;
+        [p: string]: string | number | boolean | undefined | Diagnostic | NodeValue | LinkValue | UrlValue | CodeValue;
       }
 
       export interface OpportunityColumnHeading {
@@ -93,15 +105,17 @@ declare global {
         key: string;
         /** Readable text label of the field. */
         label: string;
-        /** The data format of the column of values being described. */
+        /**
+         * The data format of the column of values being described. Usually
+         * those values will be primitives rendered as this type, but the values
+         * could also be objects with their own type to override this field.
+         */
         valueType: ItemValueTypes;
 
-        // NOTE: not used by opportunity details, but used in the renderer until unification.
+        // NOTE: not used by opportunity details, but used in the renderer until table/opportunity unification.
         displayUnit?: string;
         granularity?: number;
       }
-
-      type ItemValueTypes = 'bytes' | 'code' | 'link' | 'ms' | 'node' | 'numeric' | 'text' | 'thumbnail' | 'timespanMs' | 'url';
 
       export interface OpportunityItem {
         url: string;
@@ -112,25 +126,29 @@ declare global {
         [p: string]: number | boolean | string | undefined | Diagnostic;
       }
 
-      export type TableItem = {
-        diagnostic?: Diagnostic;
-        [p: string]: string | number | boolean | undefined | Diagnostic | NodeValue | LinkValue | UrlValue | CodeValue;
-      }
-
-      // TODO(bckenny): docs for these
-
+      /**
+       * A value used within a details object, intended to be displayed as code,
+       * regardless of the controlling heading's valueType.
+       */
       export interface CodeValue {
         type: 'code';
         value: string;
       }
 
+      /**
+       * A value used within a details object, intended to be displayed as a
+       * link with text, regardless of the controlling heading's valueType.
+       */
       export interface LinkValue {
         type: 'link',
         text: string;
         url: string;
       }
 
-      /** An HTML Node value used in items. */
+      /**
+       * A value used within a details object, intended to be displayed an HTML
+       * node, regardless of the controlling heading's valueType.
+       */
       export interface NodeValue {
         type: 'node';
         path?: string;
@@ -138,6 +156,10 @@ declare global {
         snippet?: string;
       }
 
+      /**
+       * A value used within a details object, intended to be displayed as a
+       * linkified URL, regardless of the controlling heading's valueType.
+       */
       export interface UrlValue {
         type: 'url';
         value: string;
