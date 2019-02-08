@@ -11,15 +11,6 @@
 
 const Audit = require('./audit');
 
-/** @typedef {
-  Partial<Record<LH.Artifacts.ManifestValueCheckID, boolean>> &
-  Partial<LH.Artifacts.ManifestValues> & {
-    failures: Array<string>;
-    manifestValues?: undefined;
-    allChecks?: undefined;
-  }} MultiCheckDiagnosticDetails
- */
-
 class MultiCheckAudit extends Audit {
   /**
    * @param {LH.Artifacts} artifacts
@@ -36,7 +27,7 @@ class MultiCheckAudit extends Audit {
    * @return {LH.Audit.Product}
    */
   static createAuditProduct(result) {
-    /** @type {MultiCheckDiagnosticDetails} */
+    /** @type {LH.Audit.MultiCheckAuditDetails} */
     const detailsItem = {
       ...result,
       ...result.manifestValues,
